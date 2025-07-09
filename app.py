@@ -4,9 +4,9 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
-
+import secrets
 proxied = FlaskBehindProxy(app)  ## add this line
-app.config['SECRET_KEY'] = 'fd38bcdd13f80cfe7b1044e613e2e705'
+app.config['SECRET_KEY'] = secrets.token_hex(16)
 
 app.debug = True
 toolbar = DebugToolbarExtension(app)
