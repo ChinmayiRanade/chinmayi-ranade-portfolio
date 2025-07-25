@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 import secrets
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ proxied = FlaskBehindProxy(app)  # Allow proxying (e.g., on Replit)
 
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.debug = True
-toolbar = DebugToolbarExtension(app)
+#toolbar = DebugToolbarExtension(app)
 
 @app.route("/")
 def hello_world():
@@ -37,4 +37,4 @@ def interests():
     return render_template('interests.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0")
