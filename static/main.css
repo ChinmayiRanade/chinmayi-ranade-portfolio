@@ -852,3 +852,14 @@ html {
 .art-gallery img:hover {
   transform: scale(1.05);
 }
+
+
+.music-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.music-section iframe {
+  border-radius: 12px;
+  max-width: 90%;
+}

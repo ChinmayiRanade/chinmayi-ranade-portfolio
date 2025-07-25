@@ -4,9 +4,13 @@
 <!-- Interests Section -->
 <section id="interests" class="snap-section about-centered">
     <h2 class="section-title">Interests</h2>
-    <p>
-      Outside of coding, I enjoy art, music, and food. I'm always curious and love learning across disciplines.
-    </p>
+    <div class="about-centered" style="font-size: 1.7rem">
+      <p>
+        Outside of coding, I enjoy art, music, and food. I'm always curious and love learning across disciplines.
+      </p>
+
+    </div>
+    
 
     <h3 class="section-subtitle">Some Artwork</h3>
     <div class="art-gallery">
@@ -15,6 +19,40 @@
       </div>
       <div class="art-item">
         <img src="{{ url_for('static', filename='art2.jpg') }}" alt="Art 2">
+      </div>
+    </div>
+
+    <br><br>
+    <h3 class="section-subtitle">Music</h3>
+    <div class="about-centered" style="font-size: 1.5rem">
+      <p>
+        I also enjoy listening to KPop/Pop music! My favorite artists are Seventeen, BTS, The Weeknd, Dua Lipa, Le Sserafim, and more!
+      </p>
+    </div>
+
+    <div class="music-section" style="font-size: 1.5rem">
+      <p>Few of my favorite songs lately:</p>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2rwJP8OEao5y3xexw52HfD?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2KslE17cAJNHTsI2MI0jb2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    
+
+    <br><br>
+    <h3 class="section-subtitle">Food</h3>
+    <div class="about-centered" style="font-size: 1.5rem">
+      <p>
+        I enjoy a variety of cuisines—especially Indian, Thai, and Italian!
+      </p>
+    </div>
+    <div class="art-gallery">
+      <div class="art-item">
+        <img src="{{ url_for('static', filename='biryani.jpg') }}" alt="Chicken Biryani">
+      </div>
+      <div class="art-item">
+        <img src="{{ url_for('static', filename='tomyum.jpg') }}" alt="Tom Yum Soup">
+      </div>
+      <div class="art-item">
+        <img src="{{ url_for('static', filename='pasta.jpg') }}" alt="Tom Yum Soup">
       </div>
     </div>
 
