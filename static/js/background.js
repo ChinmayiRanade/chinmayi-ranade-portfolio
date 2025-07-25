@@ -2,12 +2,10 @@ const canvas = document.getElementById('backgroundCanvas');
 const ctx = canvas.getContext('2d');
 
 let width, height;
-let circles = [];
-const circleCount = 50;
-const maxRadius = 15;
-const minRadius = 5;
+let lines = [];
+const lineCount = 50;
 
-let mouse = { x: null, y: null, radius: 100 };
+let mouse = { x: null, y: null, radius: 120 };
 
 function resize() {
   width = window.innerWidth;
@@ -18,45 +16,55 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-class Circle {
-  constructor(x, y, radius, color, vx, vy) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.baseRadius = radius;
+class Line {
+  constructor(x1, y1, x2, y2, color, vx, vy) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    this.baseColor = color;
     this.color = color;
     this.vx = vx;
     this.vy = vy;
-    this.fillColor = 'transparent';
   }
 
   draw() {
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.fillColor;
-    ctx.fill();
     ctx.strokeStyle = this.color;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.5;
+  
+    // 🔵 soft outer blue glow for all lines
+    ctx.shadowColor = this.color;
+    ctx.shadowBlur  = 6;
+  
+    ctx.moveTo(this.x1, this.y1);
+    ctx.lineTo(this.x2, this.y2);
     ctx.stroke();
+  
+    // reset shadow so only lines glow
+    ctx.shadowBlur = 0;
   }
+  
 
   update() {
-    if (this.x + this.radius > width || this.x - this.radius < 0) this.vx = -this.vx;
-    if (this.y + this.radius > height || this.y - this.radius < 0) this.vy = -this.vy;
+    this.x1 += this.vx;
+    this.x2 += this.vx;
+    this.y1 += this.vy;
+    this.y2 += this.vy;
 
-    this.x += this.vx;
-    this.y += this.vy;
+    if (this.x1 < 0 || this.x1 > width || this.x2 < 0 || this.x2 > width) this.vx = -this.vx;
+    if (this.y1 < 0 || this.y1 > height || this.y2 < 0 || this.y2 > height) this.vy = -this.vy;
 
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
+    const midX = (this.x1 + this.x2) / 2;
+    const midY = (this.y1 + this.y2) / 2;
+    const dx = mouse.x - midX;
+    const dy = mouse.y - midY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < mouse.radius) {
-      this.fillColor = this.color + 'AA';
-      this.radius = Math.min(this.baseRadius + 5, maxRadius);
+      this.color = '#FFD700'; // gold when hovered
     } else {
-      this.fillColor = 'transparent';
-      this.radius = this.baseRadius;
+      this.color = this.baseColor;
     }
 
     this.draw();
@@ -64,38 +72,34 @@ class Circle {
 }
 
 function init() {
-  circles = [];
-  for (let i = 0; i < circleCount; i++) {
-    let radius = Math.random() * (maxRadius - minRadius) + minRadius;
-    let x = Math.random() * (width - radius * 2) + radius;
-    let y = Math.random() * (height - radius * 2) + radius;
-    const pastelColors = [
-        '#FF8FAB', // rich pink
-        '#77DD77', // brighter mint green
-        '#9C92E0', // deeper lavender
-        '#FFA07A', // soft orange
-        '#BA9BC9', // deeper pastel purple
-        '#FFB347', // bold peach
-        '#FFD700'  // gold yellow
-    ];
-    let color = pastelColors[Math.floor(Math.random() * pastelColors.length)];
-      
-    let vx = (Math.random() - 0.5) * 0.5;
-    let vy = (Math.random() - 0.5) * 0.5;
+  lines = [];
+  // const colors = ['#3A5BA0', '#507DCA', '#7DA2F2', '#1E3A8A', '#8CB0FF'];
+  const colors = ['#9b5de5', '#c77dff', '#00f5d4', '#845ec2', '#7afcff'];
 
-    circles.push(new Circle(x, y, radius, color, vx, vy));
+
+  for (let i = 0; i < lineCount; i++) {
+    const x1 = Math.random() * width;
+    const y1 = Math.random() * height;
+    const x2 = x1 + Math.random() * 60 - 30;
+    const y2 = y1 + Math.random() * 60 - 30;
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const vx = (Math.random() - 0.5) * 0.2;
+    const vy = (Math.random() - 0.5) * 0.2;
+
+    lines.push(new Line(x1, y1, x2, y2, color, vx, vy));
   }
 }
 init();
 
-window.addEventListener('mousemove', function (event) {
-  mouse.x = event.x;
-  mouse.y = event.y;
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
 });
 
 function animate() {
   ctx.clearRect(0, 0, width, height);
-  circles.forEach(circle => circle.update());
+  lines.forEach(line => line.update());
   requestAnimationFrame(animate);
 }
 animate();

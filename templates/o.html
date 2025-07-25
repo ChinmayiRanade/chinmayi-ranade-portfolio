@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="scroll-container">
+
+  <!-- Home Section -->
+  <section id="home" class="snap-section home-centered">
+    <div class="intro-flex">
+      <!-- Left side: text content -->
+      <div class="intro-text">
+        <h2 class="section-title">Hello and Welcome!</h2>
+        <p class="section-text">
+          Thank you for visiting my portfolio website! Here, you can learn more about me, explore the projects I've worked on, and discover some of my interests!
+        </p>
+
+        <p class="section-text" style="margin-top: 2rem;">Let's connect! You can find me on the platforms below:</p>
+
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:@gmail.com" target="_blank" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://instagram.com/chin_ranade" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn" style="margin-top: 1.5rem;">
+          View My Résumé
+        </a>
+      </div>
+
+      <!-- Right side: image -->
+      <div class="intro-image" style="margin-top: -5.9rem;">
+        <img src="{{ url_for('static', filename='me.jpg') }}" alt="My Photo" class="profile-pic">
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <p>Scroll for About ↓</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="snap-section about-centered">
+    <h2 class="section-title" style="text-align: center;">About Me</h2>
+
+    <!-- Personal Intro -->
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.5rem;">
+      <p>
+        I'm a passionate developer who loves building clean, creative, and interactive web experiences.
+      </p>
+    </div>
+
+    <!-- Education Subsection -->
+    <div class="about-education-container">
+      <!-- University Image -->
+      <div class="university-image" style="margin-top: -40px;">
+        <img src="{{ url_for('static', filename='gmu.jpg') }}" alt="George Mason University" class="university-pic">
+      </div>
+
+      <!-- University Text -->
+      <div class="about-text">
+        <p>
+          I'm currently a rising junior majoring in Computer Science at George Mason University, and I've been on the Dean's List since freshman year.
+          <br><br>
+          <strong>Expected Graduation:</strong> May 2027
+        </p>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div style="text-align: center;">
+      <h3>Tech Stack</h3>
+      <ul class="tech-stack">
+        <li>Java</li>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>HTML & CSS</li>
+        <li>Git & GitHub</li>
+        <li>AI & Machine Learning</li>
+        <li>APIs</li>
+        <li>SQL</li>
+        <li>JavaScript</li>
+        <li>Agile</li>
+        <li>R</li>
+        <li>C</li>
+      </ul>
+    </div>
+
+    <div class="scroll-hint">
+      <p>Scroll for Experience ↓</p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="snap-section about-centered">
+    <h2 class="section-title">Experience</h2>
+    <p>
+      I've worked on a wide range of projects—from web apps to machine learning pipelines. I also have experience collaborating on student research and hackathon teams!
+    </p>
+
+    <div class="experience-cards">
+        <div class="experience-card">
+          <h3>Tech Developer Intern</h3>
+          <p><strong>Sponsors for Educational Opportunity</strong>  • Online • June 2024 – Present</p>
+          <ul>
+            <li>Completed 300+ hours of rigorous computer science and software engineering training focused on data structures, algorithms, and full-stack web development</li>
+            <li>Gained software development skills by working in SCRUM-like teams to design, test, and implement full-stack applications using Python (Flask), MySQL, HTML, JavaScript, CSS, and API integrations</li>
+          </ul>
+        </div>
+      
+        <div class="experience-card">
+          <h3>Tech Fellowship - Tech Fellow for Cybersecurity 101 Course</h3>
+          <p><strong>CodePath</strong> • Online • Aug 2024 - Nov 2024</p>
+          <ul>
+            <li>Led breakout sessions and supported college students in hands-on labs covering topics such as cryptography, password cracking, malware analysis, Secure Shell (SSH), and Open Source Intelligence (OSINT)</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+            <h3>Tech Fellowship - Tech Fellow for Technical Interview Prep 101 Course</h3>
+            <p><strong>CodePath</strong> • Online • May 2024 - Aug 2024</p>
+            <ul>
+              <li>Facilitated breakout sessions with 4-5 college students and supported 30-35 students with Python-based problem sets on data structures and algorithms</li>
+              <li>Guided students through coding challenges and reinforced core interview concepts</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <h3>Reading Tutor</h3>
+            <p><strong>Amplify</strong> • Online • Feb 2024 - July 2024</p>
+            <ul>
+              <li>Structured and adapted lesson plans for elementary school students to support individual learning needs, improving their reading comprehension, fluency, and overall literacy skills</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <h3>Programming Intern</h3>
+            <p><strong>BWSI</strong> • Online • July 2022 - August 2022</p>
+            <ul>
+              <li>Completed Unmanned Air System - Synthetic Aperture Radar (UAS-SAR) course</li>
+              <li>Coded backprojection for SAR image generation and designed API for radar modules; placed 3rd in competition
+            </li>
+            </ul>
+          </div>
+
+      </div>
+      
+
+    <div class="scroll-hint">
+      <p>Scroll for Interests ↓</p>
+    </div>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests" class="snap-section about-centered">
+    <h2 class="section-title">Interests</h2>
+    <p>
+      Outside of coding, I enjoy photography, music, and exploring new places. I’m always curious and love learning across disciplines.
+    </p>
+
+    <div class="scroll-hint">
+      <p>Back to Top ↑</p>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

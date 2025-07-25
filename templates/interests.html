@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Interests Section -->
+<section id="interests" class="snap-section about-centered">
+    <h2 class="section-title">Interests</h2>
+    <p>
+      Outside of coding, I enjoy art, music, and food. I'm always curious and love learning across disciplines.
+    </p>
+
+    <h3 class="section-subtitle">Some Artwork</h3>
+    <div class="art-gallery">
+      <div class="art-item">
+        <img src="{{ url_for('static', filename='art1.jpg') }}" alt="Art 1">
+      </div>
+      <div class="art-item">
+        <img src="{{ url_for('static', filename='art2.jpg') }}" alt="Art 2">
+      </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="section-title">Projects</h1>
+<div class="container">
+    <div class="card">
+      <div class="box">
+        <div class="content">
+          <h2>01</h2>
+          <h3>Bon Voyage: Travel Planner Assitant</h3>
+          <p>Bon Voyage is an interactive travel planning website that creates custom itineraries based on your destination, trip length, budget, and interests. It combines real-time weather, top attractions, currency exchange rates, and AI-generated plans into one seamless experience.</p>
+          <a href="https://github.com/ChinmayiRanade/travelProject">Visit GitHub</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="box">
+        <div class="content">
+          <h2>02</h2>
+          <h3>Personal Website</h3>
+          <p>Developed a modern, dark-themed personal portfolio website featuring a custom animated background, interactive cards with glowing hover effects, and a sleek, responsive design. Utilized HTML, CSS variables, JavaScript, advanced typography, and smooth transitions to create an engaging user experience that highlights projects, skills, and professional background.</p>
+          <a href="https://github.com/ChinmayiRanade/websiteProject">Visit GitHub</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="box">
+        <div class="content">
+          <h2>03</h2>
+          <h3>Women in Data Science Datathon: ADHD & Sex Prediction using Machine Learning</h3>
+          <p>Built Random Forest and CatBoost models to classify ADHD and sex in WiDS Datathon datasets. Used Synthetic Minority Oversampling Technique (SMOTE) to handle class imbalance and achieved ~79% accuracy.</p>
+          <!--<a href="#">Visit GitHub</a>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="box">
+          <div class="content">
+            <h2>04</h2>
+            <h3>CS Degrees and Graduate Earnings: Data Science Project</h3>
+            <p>Analyzed College Scorecard data to find links between CS degree share and post-grad earnings. Cleaned/transformed data with dplyr and created various plots like regional facet plots using ggplot2. Built and evaluated a linear regression model, revealing a weak positive relationship and limited explanatory power.</p>
+            <!--<a href="#">Visit GitHub</a>-->
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="box">
+          <div class="content">
+            <h2>05</h2>
+            <h3>Life Ladder Score Prediction with World Happiness Report Metrics </h3>
+            <p>Predicted happiness scores with Linear Regression and Random Forest; performed EDA, cleaning, and evaluation.</p>
+            <a href="https://github.com/ChinmayiRanade/Cornell-ML-Project-Portfolio">Visit GitHub</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  
+  
+
+
+{% endblock %}

@@ -1,5 +1,58 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h2>{{ subtitle }}</h2>
-    <p>{{ text }}</p>
+<!-- About Section -->
+<section id="about" class="snap-section about-centered">
+    <br><br>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-intro">
+      <p>
+        Hi, I'm Chinmayi Ranade, with experience in machine learning, data science, and software development
+        focused on creating practical, real-world solutions through technology.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="about-education-container">
+      <div class="university-image">
+        <img src="{{ url_for('static', filename='gmu.jpg') }}" alt="George Mason University" class="university-pic">
+      </div>
+      <div class="about-text">
+        <p>
+          I'm currently a rising junior majoring in Computer Science at George Mason University, and I've been on the Dean's List since freshman year.
+          <br><br>
+          <strong>Expected Graduation:</strong> May 2027
+        </p>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <div class="certificates-section">
+      <h3 class="section-subtitle">Certificates</h3>
+      <div class="certificates-container">
+        <div class="certificate-card">
+          <img src="{{ url_for('static', filename='gwc.png') }}" alt="GWC Certificate">
+          <p>Girls Who Code x Accenture: Work Prep Program Certificate</p>
+        </div>
+        <div class="certificate-card">
+          <img src="{{ url_for('static', filename='ml.jpg') }}" alt="ML Certificate">
+          <p>Cornell University: Machine Learning Foundations Certificate</p>
+        </div>
+        <div class="certificate-card">
+          <img src="{{ url_for('static', filename='cornell.jpg') }}" alt="BTT Certificate">
+          <p>Break Through Tech AI Program Completion</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div style="text-align: center;">
+        <br><br>
+      <h3>Tech Stack</h3>
+      <ul class="tech-stack">
+        <li>Java</li><li>Python</li><li>Flask</li><li>HTML & CSS</li><li>Git & GitHub</li>
+        <li>AI & Machine Learning</li><li>APIs</li><li>SQL</li><li>JavaScript</li><li>Agile</li><li>R</li><li>C</li>
+      </ul>
+    </div>
+
 {% endblock content %}

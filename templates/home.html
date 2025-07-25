@@ -1,5 +1,40 @@
 {% extends "layout.html" %}
+
 {% block content %}
-    <h2>{{ subtitle }}</h2>
-    <p>{{ text }}</p>
-{% endblock content %}
+<div class="scroll-container">
+
+  <!-- Home Section -->
+  <section id="home" class="snap-section home-centered">
+    <div class="intro-flex">
+      <!-- Left side: text content -->
+      <div class="intro-text">
+        <h2 class="section-title">Hello and Welcome!</h2>
+        <p class="section-text">
+          Thank you for visiting my portfolio website! Here, you can learn more about me, explore the projects I've worked on, and discover some of my interests!
+        </p>
+        <p class="section-text" style="margin-top: 2rem;">Let's connect! You can find me on the platforms below:</p>
+
+        <div class="social-links">
+          <a href="https://github.com/ChinmayiRanade" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/chinmayi-ranade-97a995273/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:chinmayi.a.ranade@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/chin_ranade" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn" style="margin-top: 1.5rem;">
+          View My Résumé
+        </a>
+      </div>
+
+      <!-- Right side: image -->
+      <div class="intro-image" style="margin-top: -5.9rem;">
+        <img src="{{ url_for('static', filename='me.jpg') }}" alt="My Photo" class="profile-pic">
+      </div>
+    </div>
+
+    
+  </section>
+
+  
+</div>
+{% endblock %}
